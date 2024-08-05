@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: azurefile-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: azurefile-csi
+  csi:
+    driver: file.csi.azure.com
+    volumeHandle: arofilesharesmb  # Nome do Azure File Share
+    volumeAttributes:
+      secretName: storageaccount-secret
+      secretNamespace: sap-siem
+      shareName: arofilesharesmb  # Nome do Azure File Share
+      storageAccount: storagearofiles  # Nome da Storage Account
+    mountOptions: "dir_mode=0777,file_mode=0777,vers=3.0"
