@@ -6,8 +6,8 @@
     },
     "secrets_source": {
       "secrets": "AZURE_KEY_VAULT",
-      "intprefix": "S4H",
-      "keyvault": "ARO-Keyvault-Contoso"
+      "intprefix": "System-ID-here",
+      "keyvault": "Your-KeyVault-Name-here"
     },
     "abap_central_instance": {
       "ashost": "ABAP-Hostname-or-IP-here",
