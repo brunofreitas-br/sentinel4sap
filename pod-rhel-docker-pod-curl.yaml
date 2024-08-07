@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rhel-docker-pod
+  namespace: seu-namespace-aqui
+spec:
+  hostNetwork: true
+  containers:
+  - name: rhel-docker
+    image: 'redhat/ubi8:8.10-901.1717584420'
+    securityContext:
+      privileged: true
+    command: ["/bin/bash", "-c", "--"]
+    args:
+    - |
+      yum install -y sudo unzip nmap-ncat jq yum-utils curl && \
+      mkdir -p /home/sapcon/S4H/sdk/ && \
+      curl -o /home/sapcon/S4H/arquivo1.ext "https://<storage-account-name>.blob.core.windows.net/<container-name>/arquivo1.ext?<sas-token>" && \
+      curl -o /home/sapcon/S4H/sdk/arquivo2.ext "https://<storage-account-name>.blob.core.windows.net/<container-name>/arquivo2.ext?<sas-token>" && \
+      tail -f /dev/null
