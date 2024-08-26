@@ -15,6 +15,6 @@ spec:
     - |
       yum install -y sudo unzip nmap-ncat jq yum-utils curl && \
       mkdir -p /home/sapcon/S4H/sdk/ && \
-      curl -o /home/sapcon/S4H/file1.ext "https://<storage-account-name>.blob.core.windows.net/<container-name>/arquivo1.ext?<sas-token>" && \
-      curl -o /home/sapcon/S4H/sdk/file2.ext "https://<storage-account-name>.blob.core.windows.net/<container-name>/arquivo2.ext?<sas-token>" && \
+      curl -o /home/sapcon/S4H/systemconfig.json "https://<storage-account-name>.blob.core.windows.net/<container-name>/arquivo1.ext?<sas-token>" && \
+      curl -o /home/sapcon/S4H/sdk/file2.zip "https://<storage-account-name>.blob.core.windows.net/<container-name>/arquivo2.ext?<sas-token>" && \
       tail -f /dev/null
